@@ -1,0 +1,468 @@
+{
+  "tempo": {
+    "perceived_bpm": 94.36,
+    "subdivision_bpm": 188.72,
+    "confidence": {
+      "perceived": 0.652,
+      "subdivision": 0.817
+    }
+  },
+  "rhythm": {
+    "num_onsets": 2389,
+    "mean_ioi_seconds": 0.106
+  },
+  "audio": {
+    "duration_seconds": 257.27,
+    "sample_rate": 48000
+  },
+  "explanation": {
+    "summary": "Strong rhythmic subdivision detected at ~188.7 BPM, with perceived beat at ~94.4 BPM.",
+    "reasoning": [
+      "Energy-based onset detection revealed dense rhythmic events.",
+      "Autocorrelation shows strongest periodic repetition.",
+      "Perceived tempo selected using human perceptual beat range (60 to 120 BPM)."
+    ]
+  },
+  "rhythm_hierarchy": {
+    "reference_beat_bpm": 94.36,
+    "layers": [
+      {
+        "level": "fast_subdivision",
+        "bpm": 283.08,
+        "period_seconds": 0.212,
+        "strength": 0.242,
+        "ratio_to_beat": 3.0
+      },
+      {
+        "level": "beat",
+        "bpm": 94.36,
+        "period_seconds": 0.6359,
+        "strength": 0.209,
+        "ratio_to_beat": 1.0
+      },
+      {
+        "level": "slow_pulse",
+        "bpm": 70.77,
+        "period_seconds": 0.8478,
+        "strength": 0.166,
+        "ratio_to_beat": 0.75
+      }
+    ]
+  },
+  "groove": {
+    "mean_abs_deviation_ms": 31.76,
+    "std_deviation_ms": 36.9,
+    "max_deviation_ms": 63.46,
+    "swing_ratio": 1.039
+  },
+  "tempo_drift": {
+    "window_seconds": 12,
+    "mean_local_bpm": 101.1,
+    "std_local_bpm": 7.82,
+    "max_deviation_bpm": 15.94,
+    "mean_deviation_bpm": 6.74,
+    "bias": "push",
+    "sections": [
+      {
+        "start": 0.0,
+        "end": 12.0,
+        "bpm": 85.88
+      },
+      {
+        "start": 6.0,
+        "end": 18.0,
+        "bpm": 100.45
+      },
+      {
+        "start": 12.0,
+        "end": 24.0,
+        "bpm": 101.35
+      },
+      {
+        "start": 180.0,
+        "end": 192.0,
+        "bpm": 108.17
+      },
+      {
+        "start": 186.0,
+        "end": 198.0,
+        "bpm": 110.29
+      },
+      {
+        "start": 192.0,
+        "end": 204.0,
+        "bpm": 100.45
+      }
+    ]
+  },
+  "meter": {
+    "time_signature": "4/4",
+    "beats_per_bar": 4,
+    "confidence": 0.6
+  },
+  "sections": {
+    "features": [
+      {
+        "start": 0.0,
+        "end": 12.0,
+        "onset_density": 3.6666666666666665,
+        "groove_mean": 29.42,
+        "groove_std": 32.3
+      },
+      {
+        "start": 6.0,
+        "end": 18.0,
+        "onset_density": 4.333333333333333,
+        "groove_mean": 27.75,
+        "groove_std": 31.3
+      },
+      {
+        "start": 12.0,
+        "end": 24.0,
+        "onset_density": 4.25,
+        "groove_mean": 29.2,
+        "groove_std": 34.27
+      },
+      {
+        "start": 18.0,
+        "end": 30.0,
+        "onset_density": 6.583333333333333,
+        "groove_mean": 32.77,
+        "groove_std": 37.72
+      },
+      {
+        "start": 24.0,
+        "end": 36.0,
+        "onset_density": 9.416666666666666,
+        "groove_mean": 32.77,
+        "groove_std": 37.53
+      },
+      {
+        "start": 30.0,
+        "end": 42.0,
+        "onset_density": 9.666666666666666,
+        "groove_mean": 29.49,
+        "groove_std": 32.33
+      },
+      {
+        "start": 36.0,
+        "end": 48.0,
+        "onset_density": 9.583333333333334,
+        "groove_mean": 32.7,
+        "groove_std": 36.6
+      },
+      {
+        "start": 42.0,
+        "end": 54.0,
+        "onset_density": 9.0,
+        "groove_mean": 34.51,
+        "groove_std": 38.83
+      },
+      {
+        "start": 48.0,
+        "end": 60.0,
+        "onset_density": 8.916666666666666,
+        "groove_mean": 31.58,
+        "groove_std": 35.55
+      },
+      {
+        "start": 54.0,
+        "end": 66.0,
+        "onset_density": 9.916666666666666,
+        "groove_mean": 33.26,
+        "groove_std": 37.23
+      },
+      {
+        "start": 60.0,
+        "end": 72.0,
+        "onset_density": 10.75,
+        "groove_mean": 31.47,
+        "groove_std": 37.93
+      },
+      {
+        "start": 66.0,
+        "end": 78.0,
+        "onset_density": 8.0,
+        "groove_mean": 24.84,
+        "groove_std": 32.21
+      },
+      {
+        "start": 72.0,
+        "end": 84.0,
+        "onset_density": 9.583333333333334,
+        "groove_mean": 26.9,
+        "groove_std": 32.83
+      },
+      {
+        "start": 78.0,
+        "end": 90.0,
+        "onset_density": 13.083333333333334,
+        "groove_mean": 32.27,
+        "groove_std": 36.77
+      },
+      {
+        "start": 84.0,
+        "end": 96.0,
+        "onset_density": 11.75,
+        "groove_mean": 35.64,
+        "groove_std": 40.2
+      },
+      {
+        "start": 90.0,
+        "end": 102.0,
+        "onset_density": 12.0,
+        "groove_mean": 35.4,
+        "groove_std": 40.2
+      },
+      {
+        "start": 96.0,
+        "end": 108.0,
+        "onset_density": 12.25,
+        "groove_mean": 35.15,
+        "groove_std": 39.08
+      },
+      {
+        "start": 102.0,
+        "end": 114.0,
+        "onset_density": 11.583333333333334,
+        "groove_mean": 35.62,
+        "groove_std": 39.58
+      },
+      {
+        "start": 108.0,
+        "end": 120.0,
+        "onset_density": 11.0,
+        "groove_mean": 33.19,
+        "groove_std": 37.73
+      },
+      {
+        "start": 114.0,
+        "end": 126.0,
+        "onset_density": 8.5,
+        "groove_mean": 31.44,
+        "groove_std": 34.94
+      },
+      {
+        "start": 120.0,
+        "end": 132.0,
+        "onset_density": 8.583333333333334,
+        "groove_mean": 28.63,
+        "groove_std": 32.29
+      },
+      {
+        "start": 126.0,
+        "end": 138.0,
+        "onset_density": 10.5,
+        "groove_mean": 29.59,
+        "groove_std": 33.96
+      },
+      {
+        "start": 132.0,
+        "end": 144.0,
+        "onset_density": 10.833333333333334,
+        "groove_mean": 34.65,
+        "groove_std": 38.64
+      },
+      {
+        "start": 138.0,
+        "end": 150.0,
+        "onset_density": 9.25,
+        "groove_mean": 33.16,
+        "groove_std": 38.75
+      },
+      {
+        "start": 144.0,
+        "end": 156.0,
+        "onset_density": 10.5,
+        "groove_mean": 31.42,
+        "groove_std": 38.02
+      },
+      {
+        "start": 150.0,
+        "end": 162.0,
+        "onset_density": 13.5,
+        "groove_mean": 29.92,
+        "groove_std": 35.54
+      },
+      {
+        "start": 156.0,
+        "end": 168.0,
+        "onset_density": 12.166666666666666,
+        "groove_mean": 27.77,
+        "groove_std": 32.11
+      },
+      {
+        "start": 162.0,
+        "end": 174.0,
+        "onset_density": 11.5,
+        "groove_mean": 33.12,
+        "groove_std": 38.62
+      },
+      {
+        "start": 168.0,
+        "end": 180.0,
+        "onset_density": 11.166666666666666,
+        "groove_mean": 32.44,
+        "groove_std": 37.53
+      },
+      {
+        "start": 174.0,
+        "end": 186.0,
+        "onset_density": 7.166666666666667,
+        "groove_mean": 29.93,
+        "groove_std": 33.18
+      },
+      {
+        "start": 180.0,
+        "end": 192.0,
+        "onset_density": 5.0,
+        "groove_mean": 30.69,
+        "groove_std": 33.91
+      },
+      {
+        "start": 186.0,
+        "end": 198.0,
+        "onset_density": 6.25,
+        "groove_mean": 29.64,
+        "groove_std": 33.78
+      },
+      {
+        "start": 192.0,
+        "end": 204.0,
+        "onset_density": 5.25,
+        "groove_mean": 29.12,
+        "groove_std": 33.23
+      },
+      {
+        "start": 198.0,
+        "end": 210.0,
+        "onset_density": 5.333333333333333,
+        "groove_mean": 32.28,
+        "groove_std": 36.54
+      },
+      {
+        "start": 204.0,
+        "end": 216.0,
+        "onset_density": 9.083333333333334,
+        "groove_mean": 30.14,
+        "groove_std": 36.52
+      },
+      {
+        "start": 210.0,
+        "end": 222.0,
+        "onset_density": 11.583333333333334,
+        "groove_mean": 30.01,
+        "groove_std": 36.54
+      },
+      {
+        "start": 216.0,
+        "end": 228.0,
+        "onset_density": 11.666666666666666,
+        "groove_mean": 30.15,
+        "groove_std": 36.06
+      },
+      {
+        "start": 222.0,
+        "end": 234.0,
+        "onset_density": 11.25,
+        "groove_mean": 29.85,
+        "groove_std": 34.72
+      },
+      {
+        "start": 228.0,
+        "end": 240.0,
+        "onset_density": 11.083333333333334,
+        "groove_mean": 27.73,
+        "groove_std": 32.36
+      },
+      {
+        "start": 234.0,
+        "end": 246.0,
+        "onset_density": 11.666666666666666,
+        "groove_mean": 31.79,
+        "groove_std": 36.37
+      },
+      {
+        "start": 240.0,
+        "end": 252.0,
+        "onset_density": 11.833333333333334,
+        "groove_mean": 38.97,
+        "groove_std": 42.95
+      }
+    ],
+    "boundaries": [
+      {
+        "time": 72.0,
+        "strength": 9.178
+      },
+      {
+        "time": 168.0,
+        "strength": 8.453
+      },
+      {
+        "time": 246.0,
+        "strength": 9.74
+      }
+    ],
+    "labeled": [
+      {
+        "start": 0.0,
+        "end": 72.0,
+        "mean_density": 7.825757575757577,
+        "mean_groove_std": 35.59909090909091,
+        "label": "post_chorus"
+      },
+      {
+        "start": 72.0,
+        "end": 168.0,
+        "mean_density": 11.005555555555555,
+        "mean_groove_std": 36.70933333333333,
+        "label": "chorus"
+      },
+      {
+        "start": 168.0,
+        "end": 246.0,
+        "mean_density": 8.875,
+        "mean_groove_std": 35.06166666666667,
+        "label": "post_chorus"
+      }
+    ]
+  },
+  "structure": [
+    {
+      "start": 0.0,
+      "end": 72.0,
+      "label": "A"
+    },
+    {
+      "start": 72.0,
+      "end": 168.0,
+      "label": "B"
+    },
+    {
+      "start": 168.0,
+      "end": 246.0,
+      "label": "A"
+    }
+  ],
+  "fingerprint": {
+    "song_id": "Counting_Stars_OneRepublic.mp3",
+    "tempo": 94.36,
+    "meter": "4/4",
+    "structure": [
+      "post_chorus",
+      "chorus",
+      "post_chorus"
+    ],
+    "chorus_count": 1,
+    "chorus_ratio": 0.373,
+    "avg_section_density": {
+      "post_chorus": 8.35,
+      "chorus": 11.01
+    },
+    "groove_profile": {
+      "post_chorus": 35.33,
+      "chorus": 36.71
+    }
+  }
+}

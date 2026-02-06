@@ -1,0 +1,20 @@
+{
+  "song_id": "Counting_Stars_OneRepublic.mp3",
+  "tempo": 94.36,
+  "meter": "4/4",
+  "structure": [
+    "post_chorus",
+    "chorus",
+    "post_chorus"
+  ],
+  "chorus_count": 1,
+  "chorus_ratio": 0.373,
+  "avg_section_density": {
+    "post_chorus": 8.35,
+    "chorus": 11.01
+  },
+  "groove_profile": {
+    "post_chorus": 35.33,
+    "chorus": 36.71
+  }
+}
