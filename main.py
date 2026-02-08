@@ -38,13 +38,21 @@ from src.fingerprint import (
 )
 from src.visualize_structure import plot_structure_timeline
 from src.visualize_density import plot_density_with_boundaries
-
+from src.similarity import find_similar_songs
 import json
 import os
+from src.section_similarity import (
+    compare_sections,
+    weighted_overall_similarity,
+    explain_similarity,
+    chorus_only_similarity,
+    explain_chorus_similarity
+)
 
 
 # CONFIG
-audio_path = "audio/Counting_Stars_OneRepublic.mp3"
+# audio_path = "audio/Perfect_Ed_Sheeran.mp3"
+audio_path = "audio/Steal_My_Girl_One_Direction.mp3"
 VERBOSE = False
 COMPARE_MODE = True
 COMPARE_CACHE = "output/compare_cache.json"
@@ -59,6 +67,7 @@ def log(msg):
 
 
 def main():
+    cached_song = None
     signal, sr = load_audio(audio_path)
     duration = len(signal) / sr
 
@@ -116,7 +125,91 @@ def main():
     )
 
     save_fingerprint(fingerprint)
+    fp_path = "output/fingerprints.json"
+    if COMPARE_MODE and os.path.exists(COMPARE_CACHE):
+        with open(COMPARE_CACHE, "r") as f:
+            cached_song = json.load(f)
+    if os.path.exists(fp_path):
+        with open(fp_path, "r") as f:
+            all_fps = json.load(f)
+    else:
+        all_fps = []
     vec = fingerprint_to_vector(fingerprint)
+
+    print("\nSection-level similarity:")
+
+    for fp in all_fps:
+        if fp["song_id"] == song_id:
+            continue
+
+        section_distances = compare_sections(
+            labeled_sections,
+            fp["sections"],
+            duration,
+            fp["duration"]
+        )
+
+        overall = weighted_overall_similarity(section_distances)
+
+        if overall is None:
+            continue
+
+        print(f"\nCompared to {fp['song_id']}:")
+        print(f"- Overall section similarity: {overall:.3f}")
+
+        for label, dist in section_distances.items():
+            print(f"  • {label}: {dist:.3f}")
+
+        chorus_labels = {"chorus", "post_chorus"}
+
+        if any(lbl in section_distances for lbl in chorus_labels):
+            sa = next(s for s in labeled_sections if s["label"] in chorus_labels)
+            sb = next(s for s in fp["sections"] if s["label"] in chorus_labels)
+
+            reasons = explain_similarity(sa, sb, duration, fp["duration"])
+
+            print("  Explanation:")
+            for name, value in reasons:
+                print(f"    - {name} difference: {value:.2f}")
+    
+    if cached_song is not None:
+        print("\nChorus-only similarity:")
+
+        chorus_scores = []
+
+        for fp in all_fps:
+            if fp["song_id"] == song_id:
+                continue
+
+            score = chorus_only_similarity(
+                labeled_sections,
+                fp["sections"],
+                duration,
+                fp["duration"]
+            )
+
+            if score is not None:
+                chorus_scores.append((fp, score))
+
+        chorus_scores.sort(key=lambda x: x[1])
+
+        for fp, score in chorus_scores:
+            print(f"- {fp['song_id']} → {score:.3f}")
+
+            reasons = explain_chorus_similarity(
+                labeled_sections,
+                fp["sections"],
+                duration,
+                fp["duration"]
+            )
+
+            if reasons:
+                print("  Reason:")
+                for name, value in reasons:
+                    print(f"    • {name} difference: {value:.2f}")
+
+
+
 
     # COMPARISON CACHE
     if COMPARE_MODE and not os.path.exists(COMPARE_CACHE):
@@ -192,6 +285,17 @@ def main():
 
     save_report(report)
     print("Analysis report saved to output/analysis.json")
+
+    if len(all_fps) > 1:
+        print("\nSimilar songs (structure-based):")
+
+        similar = find_similar_songs(
+            query_fp=fingerprint,
+            all_fps=all_fps,
+            top_k=5
+        )
+        for s in similar:
+            print(f"- {s['song_id']} | distance {s['distance']}")
 
     # COMPARISON VISUAL
 

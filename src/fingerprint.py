@@ -36,6 +36,8 @@ def build_structure_fingerprint(
         "tempo": round(perceived_bpm, 2),
         "meter": meter["time_signature"],
         "structure": [s["label"] for s in labeled_sections],
+        "sections": labeled_sections,
+        "duration": duration,
         "chorus_count": sum(1 for s in labeled_sections if s["label"] == "chorus"),
         "chorus_ratio": round(chorus_time / total_time, 3),
         "avg_section_density": {
