@@ -1,9 +1,3 @@
-"""
-    Entry point for full audio structure analysis pipeline.
-    Designed to be readable, deterministic, and explainable.
-"""
-
-
 from src.load_audio import load_audio
 from src.framing import frame_signal
 from src.energy import compute_rms_energy
